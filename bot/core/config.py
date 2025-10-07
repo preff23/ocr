@@ -4,18 +4,12 @@ from dataclasses import dataclass
 
 @dataclass
 class Config:
-    # Vision and AI models
     vision_provider: str = "openai"
     vision_model: str = "gpt-4o-mini"
     analysis_model: str = "gpt-5-mini"
     
-    # OCR optimization flags
-    feature_ocr_v10: bool = True
-    feature_ocr_v11: bool = False
-    feature_ocr_v12: bool = False
-    feature_ocr_v13: bool = False
+    feature_ocr_v13: bool = True
     
-    # Speed Profile optimization flags
     feature_speed_profile: bool = False
     ocr_image_max_dim_px: int = 1024
     ocr_image_jpeg_quality: int = 75
@@ -31,10 +25,7 @@ class Config:
     analysis_model_routing: str = "4o"
     news_fetch_enabled: bool = True
     
-    # OCR concurrency
     ocr_concurrency: int = 4
-    
-    # Cache settings
     cache_ttl: int = 300
     
     @classmethod
@@ -43,7 +34,7 @@ class Config:
             vision_provider=os.getenv("VISION_PROVIDER", "openai"),
             vision_model=os.getenv("VISION_MODEL", "gpt-4o-mini"),
             analysis_model=os.getenv("ANALYSIS_MODEL", "gpt-5-mini"),
-            feature_ocr_v10=os.getenv("FEATURE_OCR_V10", "1") == "1",
+            feature_ocr_v13=os.getenv("FEATURE_OCR_V13", "1") == "1",
             feature_speed_profile=os.getenv("FEATURE_SPEED_PROFILE", "0") == "1",
             ocr_image_max_dim_px=int(os.getenv("OCR_IMAGE_MAX_DIM_PX", "1024")),
             ocr_image_jpeg_quality=int(os.getenv("OCR_IMAGE_JPEG_QUALITY", "75")),
