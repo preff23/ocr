@@ -1,60 +1,60 @@
-# RadarBot AI Optimization Package
+# RadarBot AI Оптимизация
 
-## Overview
-This package contains the core AI modules for OCR processing and portfolio analysis optimization. The code has been cleaned and prepared for performance improvements.
+## Описание
+Этот пакет содержит основные AI модули для обработки OCR и анализа портфеля. Код очищен и подготовлен для улучшения производительности.
 
-## Key Components
+## Основные компоненты
 
-### OCR Processing
-- `bot/ai/vision.py` - Main OCR processing with OpenAI Vision API
-- `bot/ai/vision_speed.py` - Speed optimizations for OCR
-- OCR prompt files for different versions (v10, v12, v13)
+### OCR Обработка
+- `bot/ai/vision.py` - Основная обработка OCR с OpenAI Vision API
+- `bot/ai/vision_speed.py` - Оптимизации скорости для OCR
+- Файлы промптов OCR для разных версий (v10, v12, v13)
 
-### Pipeline Processing
-- `bot/pipeline/portfolio_ingest_pipeline.py` - Main processing pipeline
-- `bot/pipeline/portfolio_ingest_pipeline_speed.py` - Optimized version
+### Обработка данных
+- `bot/pipeline/portfolio_ingest_pipeline.py` - Основной пайплайн обработки
+- `bot/pipeline/portfolio_ingest_pipeline_speed.py` - Оптимизированная версия
 
-### AI Analysis
-- `bot/analytics/portfolio_analyzer_parallel.py` - Parallel portfolio analysis
-- `bot/analytics/portfolio_analyzer.py` - Base analysis logic
+### AI Анализ
+- `bot/analytics/portfolio_analyzer_parallel.py` - Параллельный анализ портфеля
+- `bot/analytics/portfolio_analyzer.py` - Базовая логика анализа
 
-### Utilities
-- `bot/utils/timing.py` - Performance measurement decorators
-- `bot/utils/speed_cache.py` - High-performance caching system
-- `bot/utils/ocr_cache.py` - OCR result caching
-- `bot/utils/bond_cache.py` - Bond data caching
-- `bot/utils/cache.py` - General caching mechanisms
-- `bot/utils/normalize.py` - Data normalization functions
-- `bot/utils/render.py` - Result rendering functions
+### Утилиты
+- `bot/utils/timing.py` - Декораторы для измерения производительности
+- `bot/utils/speed_cache.py` - Высокопроизводительная система кэширования
+- `bot/utils/ocr_cache.py` - Кэширование результатов OCR
+- `bot/utils/bond_cache.py` - Кэширование данных облигаций
+- `bot/utils/cache.py` - Общие механизмы кэширования
+- `bot/utils/normalize.py` - Функции нормализации данных
+- `bot/utils/render.py` - Функции рендеринга результатов
 
-## Configuration
-The `bot/core/config.py` file contains all performance-related settings:
-- OCR image compression settings
-- Concurrency parameters
-- Cache TTL values
-- Model routing options
+## Конфигурация
+Файл `bot/core/config.py` содержит все настройки производительности:
+- Настройки сжатия изображений OCR
+- Параметры параллельности
+- Время жизни кэша
+- Опции маршрутизации моделей
 
-## Setup Instructions
-1. Install dependencies: `pip install -r requirements.txt`
-2. Configure environment variables as needed
-3. The code is ready for optimization work
+## Инструкции по установке
+1. Установите зависимости: `pip install -r requirements.txt`
+2. Настройте переменные окружения при необходимости
+3. Код готов для работы по оптимизации
 
-## Areas for Optimization
-- OCR processing speed and accuracy
-- Parallel processing improvements
-- Caching strategy enhancements
-- Memory usage optimization
-- API call efficiency
+## Области для оптимизации
+- Скорость и точность OCR обработки
+- Улучшения параллельной обработки
+- Улучшения стратегии кэширования
+- Оптимизация использования памяти
+- Эффективность API вызовов
 
-## Notes
-- All sensitive data has been removed
-- Comments have been stripped for cleaner code review
-- Focus on performance improvements only
-- Maintain existing functionality while optimizing speed
+## Примечания
+- Все чувствительные данные удалены
+- Комментарии удалены для более чистого обзора кода
+- Фокус только на улучшении производительности
+- Сохранить существующую функциональность при оптимизации скорости
 
-## Dependencies
-See `requirements.txt` for required packages. Main dependencies include:
-- OpenAI API client
-- PIL/Pillow for image processing
-- asyncio for parallel processing
-- Various caching and utility libraries
+## Зависимости
+См. `requirements.txt` для необходимых пакетов. Основные зависимости включают:
+- OpenAI API клиент
+- PIL/Pillow для обработки изображений
+- asyncio для параллельной обработки
+- Различные библиотеки кэширования и утилит
