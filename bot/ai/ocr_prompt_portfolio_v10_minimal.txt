@@ -1,0 +1,44 @@
+{
+  "is_portfolio": true|false,
+  "portfolio_name": "string|null",
+  "portfolio_value": number|null,
+  "currency": "RUB|USD|EUR|null",
+  "positions_count": number|null,
+  "accounts": [{
+    "account_id": "string",
+    "account_name": "string|null",
+    "portfolio_value": number|null,
+    "currency": "RUB|USD|EUR|null",
+    "positions": [{
+      "raw_name": "string",
+      "raw_ticker": "string|null",
+      "raw_isin": "string|null",
+      "raw_type": "акция|облигация|фонд|null",
+      "quantity": number|null,
+      "quantity_unit": "шт|лот|пай|null",
+      "price": number|null,
+      "currency": "RUB|USD|EUR|null",
+      "value": number|null,
+      "daily_change_value": number|null,
+      "daily_change_percent": number|null,
+      "weight_percent": number|null,
+      "confidence": 0.0-1.0
+    }]
+  }],
+  "cash_positions": [{
+    "account_id": "string",
+    "raw_name": "string",
+    "amount": number,
+    "currency": "RUB|USD|EUR"
+  }],
+  "reason": "ok|not_portfolio|low_quality|partial"
+}
+Правила:
+- is_portfolio=true для акций/облигаций/ETF/ПИФов
+- is_portfolio=false для валюты/золота/недвижимости/крипты
+- raw_name точно как на экране
+- quantity ищи "шт", "лот", "пай"
+- price/value: цифры, убирай пробелы, запятая→точка
+- currency: ₽→RUB, $→USD, €→EUR
+- confidence: 0.9+ четко, 0.7+ частично, 0.5+ размыто
+- cash_positions: "Свободные средства", "Cash", "RUB", "USD"
